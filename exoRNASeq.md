@@ -168,7 +168,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
    Expected output:
 
    ![Expression plot][plot]
-   [plot]:ExpressionPlots.png
+   [plot]:(ExpressionPlots.png)
 
 8. Gage:
   1. Aggregating the bamfiles:
@@ -235,8 +235,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     dev.off()
     ```
 
-      ![Top ten][cvptt]
-      [cvptt]:cvptt.PNG
+      ![Top ten](cvptt.PNG)
 
     2. Control vs pIC pathways of interest:
 
@@ -279,8 +278,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     dev.off()
     ```
 
-      ![Pathways of interest][cvppoi]
-      [cvppoi]:cvppoi.PNG
+      ![Pathways of interest](cvppoi.PNG)
 
     3. PBS vs pIC Top ten pathways:
 
@@ -312,8 +310,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ggplot(data=kp.d, aes(x= pathway, y= value)) + geom_bar(stat="identity", width=0.5,position=position_dodge(0.1), colour="black", fill="black", size=1) + coord_flip() + theme(axis.title = element_text(size=20), axis.text.y = element_text(size = 18), axis.text.x = element_text(size=18), panel.border =element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(),panel.background=element_blank()) + labs(x=NULL, y='-Log10(p-value)', size=18) + scale_x_discrete(labels = plist)
     dev.off()
     ```
-      ![Top ten][pvptt]
-      [pvptt]:pvptt.PNG
+      ![Top ten](pvptt.PNG)
 
     4. PBS vs pIC pathways of interest:
 
