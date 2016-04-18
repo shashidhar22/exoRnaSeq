@@ -172,14 +172,14 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
 8. Gage:
   1. Aggregating the bamfiles:
     ```{sh}
-  cp experiment2/condition1/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC/accepted_hits.bam bamfiles/controlm1.bam
-  cp experiment2/condition1/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC/accepted_hits.bam bamfiles/controlm2.bam
-  cp experiment2/condition1/Control_Exo_M3_MC1/Control_Exo_M3_accepted_hits.bam bamfiles/controlm2.bam
-  cp experiment2/condition1/Control_Exo_M3_MC1/Control_Exo_M3_outputs_UCSC/accepted_hits.bam bamfiles/controlm3.bam
-  cp experiment2/condition2/pIC_exo_M1_MC1-31656710/pIC_M1_UCSC/accepted_hits.bam bamfiles/picm1.bam
-  cp experiment2/condition2/pIC_exo_M2_MC1-31646822/pIC_M2_UCSC/accepted_hits.bam bamfiles/picm2.bam
-  cp experiment2/condition2/pIC_exo_M3_MC1/pIC-Exo-M3_outputs_UCSC/accepted_hits.bam bamfiles/picm3.bam
-  cp experiment1/condition1/PBS_M2_MC1-31644830/PBSM2_UCSC/accepted_hits.bam bamfiles/pbsm2.bam
+  cp ~/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC/accepted_hits.bam ~/bamfiles/controlm1.bam
+  cp ~/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC/accepted_hits.bam ~/bamfiles/controlm2.bam
+  cp ~/Control_Exo_M3_MC1/Control_Exo_M3_accepted_hits.bam ~/bamfiles/controlm2.bam
+  cp ~/Control_Exo_M3_MC1/Control_Exo_M3_outputs_UCSC/accepted_hits.bam ~/bamfiles/controlm3.bam
+  cp ~/pIC_exo_M1_MC1-31656710/pIC_M1_UCSC/accepted_hits.bam ~/bamfiles/picm1.bam
+  cp ~/pIC_exo_M2_MC1-31646822/pIC_M2_UCSC/accepted_hits.bam ~/bamfiles/picm2.bam
+  cp ~/pIC_exo_M3_MC1/pIC-Exo-M3_outputs_UCSC/accepted_hits.bam ~/bamfiles/picm3.bam
+  cp ~/PBS_M2_MC1-31644830/PBSM2_UCSC/accepted_hits.bam ~/bamfiles/pbsm2.bam
   ```
 
   2. Indexing all bamfiles:
@@ -195,7 +195,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
   library(TxDb.Mmusculus.UCSC.mm10.knownGene)
   exByGn <- exonsBy(TxDb.Mmusculus.UCSC.mm10.knownGene, "gene")
   library(GenomicAlignments)
-  fls <- list.files("bamfiles/", pattern="bam$", full.names =T)
+  fls <- list.files("~/bamfiles/", pattern="bam$", full.names =T)
   bamfls <- BamFileList(fls)
   flag <- scanBamFlag(isSecondaryAlignment=FALSE, isProperPair=TRUE)
   param <- ScanBamParam(flag=flag)
