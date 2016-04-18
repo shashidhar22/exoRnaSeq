@@ -167,8 +167,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
  ```
    Expected output:
 
-   ![Expression plot][plot]
-   [plot]:(ExpressionPlots.png)
+   ![Expression plot](ExpressionPlots.png)
 
 8. Gage:
   1. Aggregating the bamfiles:
