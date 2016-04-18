@@ -12,105 +12,105 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
    Tophat was run using the following commands:
 
   1. Control M1:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/Control_Exo_M1_MC1-31664696/Control-Exo-M1-MC1_S5_L001_R1_001.fastq.gz,~/Control_Exo_M1_MC1-31664696/Control-Exo-M1-MC1_S5_L002_R1_001.fastq.gz ~/Control_Exo_M1_MC1-31664696/Control-Exo-M1-MC1_S5_L001_R2_001.fastq.gz,~/Control_Exo_M1_MC1-31664696/Control-Exo-M1-MC1_S5_L002_R2_001.fastq.gz
-  ```
+    ```
 
   2. Control M2:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/Control_Exo_M2_MC1-31646815/Control-Exo-M2-MC1_S6_L001_R1_001.fastq.gz,~/Control_Exo_M2_MC1-31646815/Control-Exo-M2-MC1_S6_L002_R1_001.fastq.gz ~/Control_Exo_M2_MC1-31646815/Control-Exo-M2-MC1_S6_L001_R2_001.fastq.gz,~/Control_Exo_M2_MC1-31646815/Control-Exo-M2-MC1_S6_L002_R2_001.fastq.gz
   ```
 
   3. Control M3:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/Control_Exo_M3_MC1/Control_ExoM3_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/Control_Exo_M3_MC1/Control_Exo_M3_MC_S20_L001_R1_001.fastq.gz,~/Control_Exo_M3_MC1/Control_Exo_M3_MC_S20_L002_R1_001.fastq.gz ~/Control_Exo_M3_MC1/Control_Exo_M3_MC_S20_L001_R2_001.fastq.gz,~/Control_Exo_M3_MC1/Control_Exo_M3_MC_S20_L002_R2_001.fastq.gz
   ```
 
   4. pIC M1:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/pIC_exo_M1_MC1-31656710/pIC_exoM1_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/pIC_exo_M1_MC1-31656710/pIC-exo-M1-MC1_S7_L001_R1_001.fastq.gz,~/pIC_exo_M1_MC1-31656710/pIC-exo-M1-MC1_S7_L002_R1_001.fastq.gz ~/pIC_exo_M1_MC1-31656710/pIC-exo-M1-MC1_S7_L001_R2_001.fastq.gz,~/pIC_exo_M1_MC1-31656710/pIC-exo-M1-MC1_S7_L002_R2_001.fastq.gz
   ```
 
   5. pIC M2:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/pIC_exo_M2_MC1-31646822/pIC_exoM2_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/pIC_exo_M2_MC1-31646822/pIC-exo-M2-MC1_S8_L001_R1_001.fastq.gz,~/pIC_exo_M2_MC1-31646822/pIC-exo-M2-MC1_S8_L002_R1_001.fastq.gz ~/pIC_exo_M2_MC1-31646822/pIC-exo-M2-MC1_S8_L001_R2_001.fastq.gz,~/pIC_exo_M2_MC1-31646822/pIC-exo-M2-MC1_S8_L002_R2_001.fastq.gz
   ```
 
   6. pIC M3:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/pIC_exo_M3_MC1/pIC_exoM3_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/pIC_exo_M3_MC1/pIC-exo-M3-MC1_S17_L001_R1_001.fastq.gz,~/pIC_exo_M3_MC1/pIC-exo-M3-MC1_S17_L002_R1_001.fastq.gz ~/pIC_exo_M3_MC1/pIC-exo-M3-MC1_S17_L001_R2_001.fastq.gz,~/pIC_exo_M3_MC1/pIC-exo-M3-MC1_S17_L002_R2_001.fastq.gz
   ```
 
   7. PBS M1:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/PBS_M1_MC1-31658713/PBS_M1_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/PBS_M1_MC1-31658713/PBS-M1-MC1_S1_L001_R1_001.fastq.gz,~/PBS_M1_MC1-31658713/PBS-M1-MC1_S1_L002_R1_001.fastq.gz ~/PBS_M1_MC1-31658713/PBS-M1-MC1_S1_L001_R2_001.fastq.gz,~/PBS_M1_MC1-31658713/PBS-M1-MC1_S1_L002_R2_001.fastq.gz
   ```
 
   8. PBS M2:
-  ```{sh}
+    ```{sh}
   tophat2 --no-coverage-search --b2-very-sensitive --no-novel-juncs -p 4 -G ~/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/PBS_M2_MC1-31644830/PBS_M2_UCSC ~/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/genome ~/PBS_M2_MC1-31644830/PBS-M2-MC1_S2_L001_R1_001.fastq.gz,~/PBS_M2_MC1-31644830/PBS-M2-MC1_S2_L002_R1_001.fastq.gz ~/PBS_M2_MC1-31644830/PBS-M2-MC1_S2_L001_R2_001.fastq.gz,~/PBS_M2_MC1-31644830/PBS-M2-MC1_S2_L002_R2_001.fastq.gz
   ```
 
 4. Cufflinks:
   1. Control M1:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC_cuff ~/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC/accepted_hits.bam
   ```
 
   2. Control M2:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC_cuff ~/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC/accepted_hits.bam
   ```
 
   3. Control M3:
-  ```
+    ```
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/Control_Exo_M3_MC1/Control_ExoM3_UCSC_cuff ~/Control_Exo_M3_MC1/Control_ExoM3_UCSC/accepted_hits.bam
   ```
 
   4. pIC M1:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/pIC_exo_M1_MC1-31656710/pIC_exoM1_UCSC_cuff ~/pIC_exo_M1_MC1-31656710/pIC_exoM1_UCSC/accepted_hits.bam
   ```
 
   5. pIC M2:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/pIC_exo_M2_MC1-31646822/pIC_exoM2_UCSC_cuff ~/pIC_exo_M2_MC1-31646822/pIC_exoM2_UCSC/accepted_hits.bam
   ```
 
   6. pIC M3:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/pIC_exo_M3_MC1/pIC_exoM3_UCSC_cuff ~/pIC_exo_M3_MC1/pIC_exoM3_UCSC/accepted_hits.bam  
   ```
 
   7. PBS M1:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/PBS_M1_MC1-31658713/PBS_M1_UCSC_cuff ~/PBS_M1_MC1-31658713/PBS_M1_UCSC/accepted_hits.bam  
   ```
 
   8. PBS M2:
-  ```{sh}
+    ```{sh}
   /projects/home/sravishankar9/tools/tuxedo_suite/cufflinks/cufflinks -p 4 -G /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -o ~/PBS_M2_MC1-31644830/PBS_M2_UCSC_cuff ~/PBS_M2_MC1-31644830/PBS_M2_UCSC/accepted_hits.bam  
   ```
 
 5. Cuffmerge:
   1. Prepare text file with paths to cufflinks transcripts files:
-  ```{sh}
+    ```{sh}
   cat ~/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC_cuff/transcripts.gtf ~/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC_cuff/transcripts.gtf ~/Control_Exo_M3_MC1/Control_ExoM3_UCSC_cuff/transcripts.gtf ~/pIC_exo_M1_MC1-31656710/pIC_exoM1_UCSC_cuff/transcripts.gtf ~/pIC_exo_M2_MC1-31646822/pIC_exoM2_UCSC_cuff/transcripts.gtf ~/pIC_exo_M3_MC1/pIC_exoM3_UCSC_cuff/transcripts.gtf ~/PBS_M1_MC1-31658713/PBS_M1_UCSC_cuff/transcripts.gtf ~/PBS_M2_MC1-31644830/PBS_M2_UCSC_cuff/transcripts.gtf > ~/assemblies.txt
   ```
 
   2. Run cuffmerge to prepare merged transcript file:
-  ```{sh}
+    ```{sh}
   cuffmerge -g /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genes.gtf -s /data/db/Mus_musculus/UCSC/mm10/Annotation/Genes/genome.fa -p 8 ~/assemblies.txt
   ```
 
 6. Cuffdiff:
   1. Run cuffdiff between control exosome and pIC exosome:
-  ```{sh}
+    ```{sh}
   cuffdiff -o controlvspIC -b /data/db/Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa -p 4 -L Control,pIC -u ~/merged_asm/merged.gtf ~/Control_Exo_M1_MC1-31664696/Control_ExoM1_UCSC/accepted_hits.bam,~/Control_Exo_M2_MC1-31646815/Control_ExoM2_UCSC/accepted_hits.bam,~/Control_Exo_M3_MC1/Control_Exo_M3_outputs_UCSC/accepted_hits.bam ~/pIC_exo_M1_MC1-31656710/pIC_M1_UCSC/accepted_hits.bam,~/pIC_exo_M2_MC1-31646822/pIC_M2_UCSC/accepted_hits.bam,~/pIC_exo_M3_MC1/pIC-Exo-M3_outputs_UCSC/accepted_hits.bam
   ```
 
   2. Run cuffdiff between PBS and pIC exosome:
-  ```{sh}
+    ```{sh}
   cuffdiff -o PBSvspIC -b /data/db/Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa -p 4 -L PBS,pIC -u ~/merged_asm/merged.gtf ~/PBS_M1_MC1-31658713/PBSM1_UCSC/accepted_hits.bam,~/PBS_M2_MC1-31644830/PBSM2_UCSC/accepted_hits.bam ~/pIC_M1_UCSC/accepted_hits.bam,~/pIC_M2_UCSC/accepted_hits.bam
   ```
 
@@ -236,8 +236,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
     Expected output:
 
-  ![Top ten][cvptt]
-  [cvptt]:cvptt.PNG
+    ![Top ten][cvptt]
+    [cvptt]:cvptt.PNG
 
     2. Control vs pIC pathways of interest:
 
@@ -281,8 +281,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
     Expected output:
 
-  ![Pathways of interest][cvppoi]
-  [cvppoi]:cvppoi.PNG
+    ![Pathways of interest][cvppoi]
+    [cvppoi]:cvppoi.PNG
 
     3. PBS vs pIC Top ten pathways:
 
@@ -316,8 +316,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
     Expected output:
 
-  ![Top ten][pvptt]
-  [pvptt]:pvptt.PNG
+    ![Top ten][pvptt]
+    [pvptt]:pvptt.PNG
 
     4. PBS vs pIC pathways of interest:
 
@@ -367,5 +367,5 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
 
     Expected output:
 
-  ![Pathways of interest][pvppoi]
-  [pvppoi]:pvppoi.PNG
+    ![Pathways of interest][pvppoi]
+    [pvppoi]:pvppoi.PNG
