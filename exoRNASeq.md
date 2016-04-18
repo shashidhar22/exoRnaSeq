@@ -361,5 +361,4 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     dev.off()
     ```    
 
-      ![Pathways of interest](pvppoi)
-      [pvppoi]:pvppoi.PNG
+      ![Pathways of interest](pvppoi.PNG)
