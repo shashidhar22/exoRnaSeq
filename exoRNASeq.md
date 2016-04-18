@@ -167,8 +167,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
  ```
  Expected output:
 
- ![Expression plot][plot]
- [plot]:ExpressionPlots.png
+![Expression plot][plot]
+[plot]:ExpressionPlots.png
 
 8. Gage:
   1. Aggregating the bamfiles:
@@ -236,8 +236,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
       Expected output:
 
-      ![Top ten][cvptt]
-      [cvptt]:cvptt.PNG
+![Top ten][cvptt]
+[cvptt]:cvptt.PNG
 
     2. Control vs pIC pathways of interest:
 
@@ -281,8 +281,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
       Expected output:
 
-      ![Pathways of interest][cvppoi]
-      [cvppoi]:cvppoi.PNG
+![Pathways of interest][cvppoi]
+[cvppoi]:cvppoi.PNG
 
     3. PBS vs pIC Top ten pathways:
 
@@ -316,8 +316,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
       Expected output:
 
-      ![Top ten][pvptt]
-      [pvptt]:pvptt.PNG
+![Top ten][pvptt]
+[pvptt]:pvptt.PNG
 
     4. PBS vs pIC pathways of interest:
 
@@ -367,5 +367,5 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
 
       Expected output:
 
-      ![Pathways of interest][pvppoi]
-      [pvppoi]:pvppoi.PNG
+![Pathways of interest][pvppoi]
+[pvppoi]:pvppoi.PNG
