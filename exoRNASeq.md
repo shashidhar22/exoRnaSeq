@@ -236,8 +236,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
     Expected output:
 
-    ![Top ten][plot]
-    [plot]:cvptt.png
+    ![Top ten][cvptt]
+    [cvptt]:cvptt.png
 
     2. Control vs pIC pathways of interest:
 
@@ -281,8 +281,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
     Expected output:
 
-    ![Pathways of interest][plot]
-    [plot]:cvppoi.png
+    ![Pathways of interest][cvppoi]
+    [cvppoi]:cvppoi.png
 
     3. PBS vs pIC Top ten pathways:
 
@@ -316,8 +316,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
     Expected output:
 
-    ![Top ten][plot]
-    [plot]:pvptt.png
+    ![Top ten][pvptt]
+    [pvptt]:pvptt.png
 
     4. PBS vs pIC pathways of interest:
 
@@ -367,5 +367,5 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
 
     Expected output:
 
-    ![Pathways of interest][plot]
-    [plot]:pvppoi.png
+    ![Pathways of interest][pvppoi]
+    [pvppoi]:pvppoi.png
