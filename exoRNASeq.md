@@ -116,7 +116,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
 
  7. Expression plots:
  > The following R code plots the expression of the genes mentioned in "~/GenesList.txt" to create the expression plots
- ```
+   ```
  library(ggplot2)
  library(Hmisc)
  library(gridExtra)
@@ -165,7 +165,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
  grid.arrange(dens, scat, heights = c(3, 16))
  dev.off()
  ```
- Expected output:
+   Expected output:
 
   ![Expression plot][plot]
   [plot]:ExpressionPlots.png
@@ -236,8 +236,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     ```
       Expected output:
 
-![Top ten][cvptt]
-[cvptt]:cvptt.PNG
+        ![Top ten][cvptt]
+        [cvptt]:cvptt.PNG
 
     2. Control vs pIC pathways of interest:
 
