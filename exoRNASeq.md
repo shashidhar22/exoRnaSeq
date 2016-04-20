@@ -134,7 +134,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
  names(difexp)[2] <- "Con_exo"
  names(difexp)[3] <- "pIC_exo"
  names(difexp2)[2] <- "PBS"
- difexp <- merge(difexp,difexp2)
+ difexp <- merge(difexp2,difexp)
  difexp$Con_exo <- log2(difexp$Con_exo+1)
  difexp$pIC_exo <- log2(difexp$pIC_exo+1)
  difexp$PBS <- log2(difexp$PBS+1)
@@ -154,8 +154,8 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
  df.m <- melt(difexp)
  names(df.m)[3] <- "log2_FPKM"
  names(df.m)[2] <- "Condition"
- scatter <- ggplot(data = dmgl.m, aes(x = Gene, y = log2_FPKM, shape=Sample,  fill=Sample, aplha=0.9, stroke=1 )) + geom_point(size=5) + coord_flip() + scale_shape_manual(values = c(21,21,21)) + scale_fill_manual(values=c("grey","black","white"))  + theme_bw() + theme(legend.position=c(1,0.8),legend.justification=c(1,1),axis.text.x=element_text(face="bold"), axis.text.y=element_text(face="italic"), axis.line=element_line(size=1, linetype = "solid"), panel.background=element_blank(), panel.border =element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + labs(y=bquote('Gene Expression('~Log[2]~')'),x=element_blank())
- density <- ggplot(df.m, aes(x=log2_FPKM, fill=Condition,stroke=12)) + geom_density(alpha=.6) + scale_fill_manual(values=c("grey","black","white")) +theme_bw() +theme(legend.position = "none", axis.title.y=element_blank(), axis.title.x=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +scale_x_continuous(limits = range(dmgl.m$log2_FPKM))
+ scatter <- ggplot(data = dmgl.m, aes(x = Gene, y = log2_FPKM, shape=Sample,  fill=Sample, aplha=0.9, stroke=1 )) + geom_point(size=5) + coord_flip() + scale_shape_manual(values = c(21,21,21)) + scale_fill_manual(values=c("white", "grey","black"))  + theme_bw() + theme(legend.position=c(1,0.8),legend.justification=c(1,1),axis.text.x=element_text(face="bold"), axis.text.y=element_text(face="italic"), axis.line=element_line(size=1, linetype = "solid"), panel.background=element_blank(), panel.border =element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + labs(y=bquote('Gene Expression('~Log[2]~')'),x=element_blank())
+ density <- ggplot(df.m, aes(x=log2_FPKM, fill=Condition,stroke=12)) + geom_density(alpha=.6) + scale_fill_manual(values=c("white","grey","black")) +theme_bw() +theme(legend.position = "none", axis.title.y=element_blank(), axis.title.x=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +scale_x_continuous(limits = range(dmgl.m$log2_FPKM))
  scat <- ggplot_gtable(ggplot_build(scatter))
  dens <- ggplot_gtable(ggplot_build(density))
  maxWidth = unit.pmax(scat$widths[2:3], dens$widths[2:3])
@@ -201,6 +201,17 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
   param <- ScanBamParam(flag=flag)
   gnCnt <- summarizeOverlaps(exByGn, bamfls, mode="Union", ignore.strand=TRUE, singleEnd=FALSE, param=param)
   hnrnp.cnts=assay(gnCnt) #read counts
+  cnts=hnrnp.cnts
+  dim(cnts)
+  sel.rn=rowSums(cnts) != 0
+  cnts=cnts[sel.rn,]
+  dim(cnts)
+  libsizes=colSums(cnts)
+  size.factor=libsizes/exp(mean(log(libsizes)))
+  cnts.norm=t(t(cnts)/size.factor)
+  range(cnts.norm)
+  cnts.norm=log2(cnts.norm+8)
+  write.table(cnts.norm, '~/GageCounts.tsv', sep='\t')
   ```
 
   4. Plot significant altered pathways:
@@ -211,7 +222,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     library(ggplot2)
     library(reshape2)
     library(plyr)
-    cnts.norm <- hnrnp.cnts
+    cnts.norm <- read.table('~/GageCounts.tsv', header=TRUE, row.names = 1, sep='\t')
     con_exo <- 1:3
     pic_exo <- 5:7
     kg.mouse<- kegg.gsets("mouse")
@@ -254,7 +265,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     library(ggplot2)
     library(reshape2)
     library(plyr)
-    cnts.norm <- hnrnp.cnts
+    cnts.norm <- read.table('~/GageCounts.tsv', header=TRUE, row.names = 1, sep='\t')
     glist <- c("mmu04062 Chemokine signaling pathway", "mmu04064 NF-kappa B signaling pathway", "mmu04620 Toll-like receptor signaling pathway", "mmu04612 Antigen processing and presentation", "mmu04668 TNF signaling pathway", "mmu04623 Cytosolic DNA-sensing pathway")
     plist <- c("mmu04062 Chemokine signaling pathway" = "Chemokine signaling pathway", "mmu04064 NF-kappa B signaling pathway" = "NF-kappa B signaling pathway", "mmu04620 Toll-like receptor signaling pathway" = "Toll-like receptor signaling pathway", "mmu04612 Antigen processing and presentation" = "Antigen processing and presentation", "mmu04668 TNF signaling pathway" = "TNF signaling pathway", "mmu04623 Cytosolic DNA-sensing pathway" = "Cytosolic DNA-sensing pathway")
     con_exo <- 1:3
@@ -289,7 +300,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     library(ggplot2)
     library(reshape2)
     library(plyr)
-    cnts.norm <- hnrnp.cnts
+    cnts.norm <- read.table('~/GageCounts.tsv', header=TRUE, row.names = 1, sep='\t')
     pbs <- 4
     pic_exo <- 5:7
     kg.mouse<- kegg.gsets("mouse")
@@ -338,7 +349,7 @@ This documents lists the pipeline used for the assembly of 8 mouse macrophage RN
     library(ggplot2)
     library(reshape2)
     library(plyr)
-    cnts.norm <- hnrnp.cnts
+    cnts.norm <- read.table('~/GageCounts.tsv', header=TRUE, row.names = 1, sep='\t')
     glist <- c("mmu04010 MAPK signaling pathway", "mmu04060 Cytokine-cytokine receptor interaction", "mmu04062 Chemokine signaling pathway", "mmu04064 NF-kappa B signaling pathway", "mmu04620 Toll-like receptor signaling pathway", "mmu04612 Antigen processing and presentation", "mmu04621 NOD-like receptor signaling pathway", "mmu04622 RIG-I-like receptor signaling pathway", "mmu04130 SNARE interactions in vesicular transport", "mmu04623 Cytosolic DNA-sensing pathway", "mmu04630 Jak-STAT signaling pathway")
     pbs <- 4
     pic_exo <- 5:7
